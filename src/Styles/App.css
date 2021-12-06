@@ -1,0 +1,339 @@
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  margin: 10px 0;
+}
+
+nav header {
+  width: 100%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  padding: 5px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav header h1 {
+  padding: 0;
+  margin: 0;
+  color: slateblue;
+}
+
+nav header button {
+  margin-left: 50px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+nav header button h3 {
+  padding: .75rem 1rem;
+  margin: 0;
+}
+
+nav .legend {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  height: 50%;
+  padding: 5px 0;
+  color: whitesmoke;
+  margin: auto;
+}
+
+nav .legend, nav .legend div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+nav .legend div {
+  cursor: pointer;
+  margin: 0 0.4rem;
+  padding: 0.5rem 0.75rem;
+}
+
+nav .legend div:hover {
+  background-color: whitesmoke;
+  color: #23272d;
+}
+
+nav .legend svg {
+  height: 25px;
+  padding: 0 10px;
+}
+
+.grid-layout {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-layout ul {
+  outline: 1px solid #3b3f59;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.grid-layout ul li {
+  border: 1px solid #3b3f59;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.grid-layout ul .target {
+  background-color: red;
+}
+
+.grid {
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background-color: #23272d;
+}
+
+.grid svg {
+  width: 100%;
+}
+
+.grid .start-icon {
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+}
+
+.grid .target-icon {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.grid .wall-icon {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+.visited {
+  background-color: slateblue;
+}
+
+.animate {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  -webkit-animation: visitedAnimation 10ms ease 0ms 1 forwards running;
+          animation: visitedAnimation 10ms ease 0ms 1 forwards running;
+}
+
+.onPath {
+  background-color: springgreen;
+}
+
+.animWall {
+  -webkit-transform: scale(5);
+          transform: scale(5);
+  -webkit-animation: wallAnimation 300ms ease-out 0ms 1 forwards running;
+          animation: wallAnimation 300ms ease-out 0ms 1 forwards running;
+}
+
+@-webkit-keyframes cell {
+  from {
+    background-color: slateblue;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #6ad8c9;
+    border-radius: 25%;
+  }
+  to {
+    background-color: springgreen;
+    border-radius: 0;
+  }
+}
+
+@keyframes cell {
+  from {
+    background-color: slateblue;
+    border-radius: 100%;
+  }
+  50% {
+    background-color: #6ad8c9;
+    border-radius: 25%;
+  }
+  to {
+    background-color: springgreen;
+    border-radius: 0;
+  }
+}
+
+@-webkit-keyframes visitedAnimation {
+  0% {
+    width: 5px;
+    height: 5px;
+    background-color: whitesmoke;
+  }
+  10% {
+    width: 10px;
+    height: 10px;
+    background-color: slateblue;
+  }
+  98% {
+    width: 37px;
+    height: 37px;
+    background-color: slateblue;
+  }
+  100% {
+    width: 42px;
+    height: 42px;
+    background-color: springgreen;
+  }
+}
+
+@keyframes visitedAnimation {
+  0% {
+    width: 5px;
+    height: 5px;
+    background-color: whitesmoke;
+  }
+  10% {
+    width: 10px;
+    height: 10px;
+    background-color: slateblue;
+  }
+  98% {
+    width: 37px;
+    height: 37px;
+    background-color: slateblue;
+  }
+  100% {
+    width: 42px;
+    height: 42px;
+    background-color: springgreen;
+  }
+}
+
+@-webkit-keyframes wallAnimation {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
+
+@keyframes wallAnimation {
+  0% {
+    -webkit-transform: scale(0.2);
+            transform: scale(0.2);
+    background-color: rgba(17, 104, 217, 0.75);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    background-color: rgba(0, 217, 159, 0.75);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    background-color: rgba(0, 190, 218, 0.75);
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #23272d;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/*# sourceMappingURL=App.css.map */

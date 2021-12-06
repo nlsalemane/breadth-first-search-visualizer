@@ -1,0 +1,79 @@
+.grid {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    background-color: #23272d;
+
+    svg {
+        width: 100%;
+    }
+
+    .start-icon{
+        transform: scale(0.5);
+    }
+    .target-icon{
+        transform: scale(0.8);
+    }
+    .wall-icon {
+        transform: scale(1);
+    }
+}
+
+.visited {
+    background-color:slateblue;
+    // border-radius: 100%;
+    // animation: wallAnimation 300ms ease-out 0ms 1 forwards running;
+}
+
+.animate {
+    position: relative;
+    // background-color:springgreen;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        // background-color: springgreen;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        animation: visitedAnimation 10ms ease 0ms 1 forwards running;
+    }
+}
+
+.onPath {
+    background-color: springgreen;
+}
+
+
+.animWall {
+    transform: scale(5);
+    animation: wallAnimation 300ms ease-out 0ms 1 forwards running;
+}
+
+@keyframes cell {
+    from { background-color: slateblue; border-radius: 100%;}
+    50% { background-color: rgb(106, 216, 201); border-radius: 25%;}
+    to { background-color: springgreen; border-radius: 0; }
+}
+
+@keyframes visitedAnimation {
+    0% { width: 5px; height: 5px; background-color: whitesmoke; }
+    10% { width: 10px; height: 10px; background-color: slateblue;}
+    98% { width: 37px; height: 37px; background-color: slateblue;}
+    100% { width: 42px; height: 42px; background-color: springgreen;}
+}
+
+@keyframes wallAnimation {
+    0% { transform: scale(0.2); background-color: rgba(17, 104, 217, 0.75);}
+    50% { transform: scale(1.2); background-color: rgba(0, 217, 159, 0.75);}
+    100% { transform: scale(1); background-color: rgba(0, 190, 218, 0.75);}
+}
